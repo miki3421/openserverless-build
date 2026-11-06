@@ -1,0 +1,189 @@
+{
+  "scope": "existing ADV AMD64 laboratory only",
+  "published": false,
+  "images": {
+    "controller": {
+      "image": "localhost/ops-advanced-controller:20261106-jdk11-r1",
+      "manifest": "sha256:e1ca64f1857905163dee2781d3a9ee5ca7ddca52f9c3c9ab04fb6fc06e2944b6",
+      "config": "sha256:8b23f76e9a7c0fee79592a6a521f9335709befeff1c5804ae8f3a7cdfdb9e8e5",
+      "platform": "linux/amd64",
+      "baseManifest": "sha256:17ccb18486e35d4165591b5318e559d2124bedb6c70662a76e48c9e268918463"
+    },
+    "invoker": {
+      "image": "localhost/ops-advanced-invoker:20261106-jdk11-r1",
+      "manifest": "sha256:b3de099b9e5c5a5b2790ad85e3d7540a62f0604873f8a464561e90ca6824ffde",
+      "config": "sha256:a563f329c304f98e7de27ecb235f85020f1440b1ecb6e76f79156f7d2e233abb",
+      "platform": "linux/amd64",
+      "baseManifest": "sha256:5180166bcd57e299a236d60533be03ef16ff756d9742f26c2ac51d0ede47a706"
+    }
+  },
+  "jdkInput": {
+    "name": "OpenJDK11U-jdk_x64_linux_hotspot_11.0.33_10.tar.gz",
+    "browser_download_url": "https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.33%2B10/OpenJDK11U-jdk_x64_linux_hotspot_11.0.33_10.tar.gz",
+    "digest": "sha256:c4b8eaf56c93b95b689ffc08d155df1bcdbbffb666f8f71d21d97aedaea6f0ec",
+    "size": 195735669
+  },
+  "localTests": [
+    {
+      "component": "controller",
+      "distributionAndLaunchersUnchanged": true,
+      "distributionManifestSha256": "75329a72e57175b54890328fe18a2a14f40f4a2f3824e8f5b4a67bad23b071d9",
+      "filesCompared": 230,
+      "baseJava": "11.0.17",
+      "candidateJava": "11.0.33",
+      "checksPerImage": 6,
+      "user": "1001:1001",
+      "network": "none",
+      "rootFilesystem": "read-only"
+    },
+    {
+      "component": "invoker",
+      "distributionAndLaunchersUnchanged": true,
+      "distributionManifestSha256": "72fd90ed6468c8c5cd8998a99d04d6cd7589b62e28261275ebfe190df2539756",
+      "filesCompared": 228,
+      "baseJava": "11.0.17",
+      "candidateJava": "11.0.33",
+      "checksPerImage": 6,
+      "user": "1001:1001",
+      "network": "none",
+      "rootFilesystem": "read-only"
+    }
+  ],
+  "launchConfiguration": [
+    {
+      "component": "controller",
+      "commandEntrypointWorkingDirectoryPortsUnchanged": true,
+      "previousUser": null,
+      "candidateUser": "root",
+      "effectiveUidBeforeAndAfter": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "component": "invoker",
+      "commandEntrypointWorkingDirectoryPortsUnchanged": true,
+      "previousUser": null,
+      "candidateUser": "root",
+      "effectiveUidBeforeAndAfter": [
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "liveChecks": {
+    "alphaBeta": 12,
+    "streaming": 2,
+    "customOptionsAndCleanup": 7,
+    "pythonKindsAndCleanup": 24
+  },
+  "trivyDatabase": {
+    "Version": 2,
+    "NextUpdate": "2026-11-07T06:50:38.697106816Z",
+    "UpdatedAt": "2026-11-06T06:50:38.697107077Z",
+    "DownloadedAt": "2026-11-06T09:28:40.73630249Z",
+    "sha256": "905befbd56b0e8c9c9908444a64d7bd6456fbb313dd0208d4ad06449a035a17e"
+  },
+  "trivyJavaDatabase": {
+    "Version": 1,
+    "NextUpdate": "2026-11-09T01:10:43.741478889Z",
+    "UpdatedAt": "2026-11-06T01:10:43.741478979Z",
+    "DownloadedAt": "2026-11-06T09:28:58.907958511Z",
+    "sha256": "7124b5d89aa910c1c79b7cbdd35903ab940762f6ebb27729e558fb197f9ae1db"
+  },
+  "scanComparison": {
+    "controller-base": {
+      "image": "localhost/ops-advanced-controller-options:20261105",
+      "total": {
+        "HIGH": 77,
+        "MEDIUM": 125,
+        "LOW": 52,
+        "CRITICAL": 5
+      },
+      "byType": {
+        "ubuntu": {
+          "HIGH": 3,
+          "MEDIUM": 30,
+          "LOW": 42
+        },
+        "jar": {
+          "HIGH": 74,
+          "MEDIUM": 95,
+          "LOW": 10,
+          "CRITICAL": 5
+        }
+      }
+    },
+    "invoker-base": {
+      "image": "apache/openserverless-wsk-invoker:0.9.0-incubating.26i21w32-snapshot",
+      "total": {
+        "HIGH": 80,
+        "MEDIUM": 168,
+        "LOW": 86,
+        "CRITICAL": 5
+      },
+      "byType": {
+        "ubuntu": {
+          "HIGH": 6,
+          "MEDIUM": 73,
+          "LOW": 76
+        },
+        "jar": {
+          "HIGH": 74,
+          "MEDIUM": 95,
+          "LOW": 10,
+          "CRITICAL": 5
+        }
+      }
+    },
+    "controller-candidate": {
+      "image": "localhost/ops-advanced-controller:20261106-jdk11-r1",
+      "total": {
+        "MEDIUM": 125,
+        "LOW": 52,
+        "HIGH": 74,
+        "CRITICAL": 5
+      },
+      "byType": {
+        "ubuntu": {
+          "MEDIUM": 30,
+          "LOW": 42
+        },
+        "jar": {
+          "HIGH": 74,
+          "MEDIUM": 95,
+          "LOW": 10,
+          "CRITICAL": 5
+        }
+      }
+    },
+    "invoker-candidate": {
+      "image": "localhost/ops-advanced-invoker:20261106-jdk11-r1",
+      "total": {
+        "MEDIUM": 125,
+        "LOW": 52,
+        "HIGH": 74,
+        "CRITICAL": 5
+      },
+      "byType": {
+        "ubuntu": {
+          "MEDIUM": 30,
+          "LOW": 42
+        },
+        "jar": {
+          "HIGH": 74,
+          "MEDIUM": 95,
+          "LOW": 10,
+          "CRITICAL": 5
+        }
+      }
+    }
+  },
+  "limits": [
+    "No ARM64 or full source rebuild qualification",
+    "No fresh install or production qualification",
+    "Java dependency findings remain",
+    "No full repository-suite claim",
+    "Earlier unrelated fixture failures are not reclassified"
+  ]
+}
