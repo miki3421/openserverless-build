@@ -78,3 +78,6 @@ source build and compatibility qualification.
 
 ARM64, a fresh complete installation, production and the full repository suite
 are not qualified by this incremental AMD64 lab test.
+
+The subsequent [Java dependency batch](../advanced-java-dependencies/README.md)
+rebuilds these application distributions and records its own qualification.

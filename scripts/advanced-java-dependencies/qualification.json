@@ -1,0 +1,358 @@
+{
+  "scope": "existing ADV linux/amd64 laboratory only",
+  "date": "2026-11-06",
+  "published": false,
+  "baselineVmChanged": false,
+  "source": {
+    "repository": "https://github.com/miki3421/openwhisk",
+    "commit": "c3154902f903b01ec4efe7e2cfe64276f223dd9b",
+    "tree": "1f7e5e2288d332879aa6c9859e1809a408293a9b",
+    "originalCommit": "fc175dc4443b8fd212ad77d9e8d127b15b41766b",
+    "overlayBase": "914b30b70fb77c150e5090a0f82e0c5092489219"
+  },
+  "images": {
+    "controller": {
+      "image": "localhost/ops-advanced-controller:20261106-libs-r2",
+      "manifest": "sha256:8f0fb9a337242bf6cfcc69d7e24176efbff987beecfe44fdfdc73973fc624940",
+      "config": "sha256:50e842ea7e43bceb7cccc8e55f5e4dd18639346200eb9e54c0e6666d4cc371d6",
+      "platform": "linux/amd64",
+      "base": "localhost/ops-advanced-controller:20261106-jdk11-r1",
+      "baseManifest": "sha256:e1ca64f1857905163dee2781d3a9ee5ca7ddca52f9c3c9ab04fb6fc06e2944b6",
+      "baseConfig": "sha256:8b23f76e9a7c0fee79592a6a521f9335709befeff1c5804ae8f3a7cdfdb9e8e5"
+    },
+    "invoker": {
+      "image": "localhost/ops-advanced-invoker:20261106-libs-r2",
+      "manifest": "sha256:cbcd7fd1a7522a704128e083af53643eaa38e5e5e4e61ac4adf1104117683789",
+      "config": "sha256:3a222bff5c636bd647de78eea3f57076814d0dcf80aed83fba1581f2ca151ad9",
+      "platform": "linux/amd64",
+      "base": "localhost/ops-advanced-invoker:20261106-jdk11-r1",
+      "baseManifest": "sha256:b3de099b9e5c5a5b2790ad85e3d7540a62f0604873f8a464561e90ca6824ffde",
+      "baseConfig": "sha256:a563f329c304f98e7de27ecb235f85020f1440b1ecb6e76f79156f7d2e233abb"
+    }
+  },
+  "distributions": {
+    "controller": "9814dfa8343251211edd27dcf9968ffd7c58d4225e7373a58768801d64be78b9",
+    "invoker": "1a7e45e4b60efa126b83912abcebbca6af8814f1fae365447cac6753dd5a7313"
+  },
+  "unitTests": {
+    "original": [
+      {
+        "suite": "org.apache.openwhisk.core.containerpool.kubernetes.test.WhiskPodBuilderTests",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "suite": "org.apache.openwhisk.core.controller.test.WebActionsApiTests",
+        "tests": "127",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "suite": "org.apache.openwhisk.connector.kafka.KafkaMetricsTests",
+        "tests": "1",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "suite": "org.apache.openwhisk.core.database.s3.CloudFrontSignerTests",
+        "tests": "1",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "suite": "org.apache.openwhisk.core.containerpool.kubernetes.test.Fabric8ClientTests",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "suite": "org.apache.openwhisk.core.containerpool.kubernetes.test.KubernetesClientTests",
+        "tests": "5",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      }
+    ],
+    "candidate": [
+      {
+        "name": "org.apache.openwhisk.core.controller.test.WebActionsApiTests",
+        "tests": "127",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "name": "org.apache.openwhisk.core.containerpool.kubernetes.test.Fabric8ClientTests",
+        "tests": "2",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "name": "org.apache.openwhisk.connector.kafka.KafkaMetricsTests",
+        "tests": "1",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "name": "org.apache.openwhisk.core.database.s3.CloudFrontSignerTests",
+        "tests": "1",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "name": "org.apache.openwhisk.core.containerpool.kubernetes.test.WhiskPodBuilderTests",
+        "tests": "6",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      },
+      {
+        "name": "org.apache.openwhisk.core.containerpool.kubernetes.test.KubernetesClientTests",
+        "tests": "5",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0"
+      }
+    ],
+    "selectedTests": 142,
+    "failures": 0,
+    "skips": 0,
+    "fullRepositorySuite": false
+  },
+  "offlineChecks": [
+    {
+      "component": "controller",
+      "mode": "legacy",
+      "image": "localhost/ops-advanced-controller:20261106-jdk11-r1",
+      "exit": 2,
+      "summary": [
+        "BASELINE_FAILURE jackson_CBOR 'com.fasterxml.jackson.core.json.JsonWriteContext com.fasterxml.jackson.dataformat.cbor.CBORGenerator.getOutputContext()'",
+        "CHECKS=18 BASELINE_FAILURES=1 MODE=legacy"
+      ]
+    },
+    {
+      "component": "controller",
+      "mode": "candidate",
+      "image": "localhost/ops-advanced-controller:20261106-libs-r2",
+      "exit": 0,
+      "summary": [
+        "CHECKS=18 BASELINE_FAILURES=0 MODE=candidate"
+      ]
+    },
+    {
+      "component": "invoker",
+      "mode": "legacy",
+      "image": "localhost/ops-advanced-invoker:20261106-jdk11-r1",
+      "exit": 2,
+      "summary": [
+        "BASELINE_FAILURE jackson_CBOR 'com.fasterxml.jackson.core.json.JsonWriteContext com.fasterxml.jackson.dataformat.cbor.CBORGenerator.getOutputContext()'",
+        "CHECKS=18 BASELINE_FAILURES=1 MODE=legacy"
+      ]
+    },
+    {
+      "component": "invoker",
+      "mode": "candidate",
+      "image": "localhost/ops-advanced-invoker:20261106-libs-r2",
+      "exit": 0,
+      "summary": [
+        "CHECKS=18 BASELINE_FAILURES=0 MODE=candidate"
+      ]
+    }
+  ],
+  "liveChecks": {
+    "options": 7,
+    "alpha-beta": 12,
+    "streaming": 2,
+    "python-kinds": 24
+  },
+  "liveIdentity": {
+    "scope": "ADV",
+    "components": [
+      {
+        "component": "controller",
+        "ready": true,
+        "restarts": 0,
+        "image": "localhost/ops-advanced-controller:20261106-libs-r2",
+        "imageID": "sha256:50e842ea7e43bceb7cccc8e55f5e4dd18639346200eb9e54c0e6666d4cc371d6",
+        "runningJvm": "/usr/local/temurin-11.0.33/bin/java"
+      },
+      {
+        "component": "invoker",
+        "ready": true,
+        "restarts": 0,
+        "image": "localhost/ops-advanced-invoker:20261106-libs-r2",
+        "imageID": "sha256:3a222bff5c636bd647de78eea3f57076814d0dcf80aed83fba1581f2ca151ad9",
+        "runningJvm": "/usr/local/temurin-11.0.33/bin/java"
+      }
+    ],
+    "activePodsReady": true,
+    "whiskImageOverridesMatch": true,
+    "catalogMatches": true,
+    "containerSettingsOtherwiseUnchanged": true
+  },
+  "applicationReadiness": {
+    "invokersReady": {
+      "healthy": "1/1"
+    },
+    "earlyAttempt": {
+      "ownerGet": 503,
+      "ownerOptions": 503,
+      "reason": "No invokers available before invoker Healthy registration",
+      "evidenceRetained": true
+    },
+    "postHealthyBatch": "45 PASS"
+  },
+  "trivyVersion": "0.76.2",
+  "trivyDatabase": {
+    "Version": 2,
+    "NextUpdate": "2026-11-07T06:50:38.697106816Z",
+    "UpdatedAt": "2026-11-06T06:50:38.697107077Z",
+    "DownloadedAt": "2026-11-06T10:09:44.761279221Z",
+    "sha256": "905befbd56b0e8c9c9908444a64d7bd6456fbb313dd0208d4ad06449a035a17e"
+  },
+  "trivyJavaDatabase": {
+    "Version": 1,
+    "NextUpdate": "2026-11-09T01:10:43.741478889Z",
+    "UpdatedAt": "2026-11-06T01:10:43.741478979Z",
+    "DownloadedAt": "2026-11-06T10:10:04.254865587Z",
+    "sha256": "7124b5d89aa910c1c79b7cbdd35903ab940762f6ebb27729e558fb197f9ae1db"
+  },
+  "previousScan": {
+    "controller": {
+      "image": "localhost/ops-advanced-controller:20261106-jdk11-r1",
+      "total": {
+        "MEDIUM": 125,
+        "LOW": 52,
+        "HIGH": 74,
+        "CRITICAL": 5
+      },
+      "byType": {
+        "ubuntu": {
+          "MEDIUM": 30,
+          "LOW": 42
+        },
+        "jar": {
+          "HIGH": 74,
+          "MEDIUM": 95,
+          "LOW": 10,
+          "CRITICAL": 5
+        }
+      }
+    },
+    "invoker": {
+      "image": "localhost/ops-advanced-invoker:20261106-jdk11-r1",
+      "total": {
+        "MEDIUM": 125,
+        "LOW": 52,
+        "HIGH": 74,
+        "CRITICAL": 5
+      },
+      "byType": {
+        "ubuntu": {
+          "MEDIUM": 30,
+          "LOW": 42
+        },
+        "jar": {
+          "HIGH": 74,
+          "MEDIUM": 95,
+          "LOW": 10,
+          "CRITICAL": 5
+        }
+      }
+    }
+  },
+  "candidateScan": {
+    "controller": {
+      "image": "localhost/ops-advanced-controller:20261106-libs-r2",
+      "total": {
+        "MEDIUM": 36,
+        "LOW": 42
+      },
+      "byType": {
+        "ubuntu": {
+          "MEDIUM": 30,
+          "LOW": 42
+        },
+        "jar": {
+          "MEDIUM": 6
+        }
+      }
+    },
+    "invoker": {
+      "image": "localhost/ops-advanced-invoker:20261106-libs-r2",
+      "total": {
+        "MEDIUM": 36,
+        "LOW": 42
+      },
+      "byType": {
+        "ubuntu": {
+          "MEDIUM": 30,
+          "LOW": 42
+        },
+        "jar": {
+          "MEDIUM": 6
+        }
+      }
+    }
+  },
+  "residualJavaFindings": [
+    {
+      "VulnerabilityID": "CVE-2022-30187",
+      "PkgName": "com.azure:azure-storage-blob",
+      "InstalledVersion": "12.7.0",
+      "FixedVersion": "12.18.0",
+      "Severity": "MEDIUM"
+    },
+    {
+      "VulnerabilityID": "CVE-2025-46548",
+      "PkgName": "com.lightbend.akka.management:akka-management_2.12",
+      "InstalledVersion": "1.0.5",
+      "FixedVersion": "1.6.1",
+      "Severity": "MEDIUM"
+    },
+    {
+      "VulnerabilityID": "CVE-2023-44487",
+      "PkgName": "com.typesafe.akka:akka-http-core",
+      "InstalledVersion": "10.2.4",
+      "FixedVersion": "10.5.3",
+      "Severity": "MEDIUM"
+    },
+    {
+      "VulnerabilityID": "CVE-2021-38153",
+      "PkgName": "org.apache.kafka:kafka-clients",
+      "InstalledVersion": "2.4.0",
+      "FixedVersion": "2.6.3, 2.7.2, 2.8.1",
+      "Severity": "MEDIUM"
+    },
+    {
+      "VulnerabilityID": "CVE-2024-31141",
+      "PkgName": "org.apache.kafka:kafka-clients",
+      "InstalledVersion": "2.4.0",
+      "FixedVersion": "3.7.1",
+      "Severity": "MEDIUM"
+    },
+    {
+      "VulnerabilityID": "CVE-2026-33558",
+      "PkgName": "org.apache.kafka:kafka-clients",
+      "InstalledVersion": "2.4.0",
+      "FixedVersion": "3.9.2, 4.0.1",
+      "Severity": "MEDIUM"
+    }
+  ],
+  "limitations": [
+    "No platform exploit is established by inventory matches or offline library witnesses",
+    "No ARM64, fresh installation, production or full repository-suite qualification",
+    "Optional external cloud stores have not been exercised",
+    "Old-image CBOR linkage failure remains a separate baseline failure",
+    "Intermediate build, fixture and startup readiness failures are retained"
+  ]
+}

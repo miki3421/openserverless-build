@@ -29,6 +29,13 @@ plugins {
 }
 
 subprojects {
+    configurations.all {
+        resolutionStrategy.dependencySubstitution {
+            // The original 1.8.1 POM relocates to this maintained coordinate.
+            substitute module('org.lz4:lz4-java') with module('at.yawk.lz4:lz4-java:1.11.4')
+        }
+    }
+
     apply plugin: 'scalafmt'
     scalafmt.configFilePath = gradle.scalafmt.config
 
@@ -36,6 +43,11 @@ subprojects {
     version '1.0.0-SNAPSHOT'
 
     pluginManager.withPlugin('scala') {
+        // Gradle 6 predates the JVM environment attribute used by current Guava.
+        // This server build must select the JRE variant, never Android.
+        configurations.all {
+            attributes.attribute(Attribute.of('org.gradle.jvm.environment', String), 'standard-jvm')
+        }
         // Constraint all transitive akka-* dependencies to the one we want to use to avoid issues.
         // List generated via
         // ./gradlew :test:dependencies | grep -o 'akka-.*_' | cut -c 6- | rev | cut -c 2- | rev | sort -u

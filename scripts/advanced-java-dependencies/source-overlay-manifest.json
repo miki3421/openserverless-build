@@ -1,0 +1,97 @@
+[
+  {
+    "path": "build.gradle",
+    "sha256": "beb0cd782834bbd79d46b7cfcaece9b6343e6dc2d7269b4312a555985221f1ea",
+    "size": 5393
+  },
+  {
+    "path": "common/scala/.dockerignore",
+    "sha256": "8fb2117107c4855ff71b5e4b79f89dda2864a01b6b12f76c86823a5423139a92",
+    "size": 881
+  },
+  {
+    "path": "common/scala/DISCLAIMER",
+    "sha256": "d5db38edb93e6467e83a71d42ad3d4ad3c4aaffd370e004f2602eb4230f3ef8b",
+    "size": 560
+  },
+  {
+    "path": "common/scala/Dockerfile",
+    "sha256": "5125e98af515f2d5a75137cb9f9dcf6ca9c688921882161d362ca4cf1c7d8098",
+    "size": 1976
+  },
+  {
+    "path": "common/scala/LICENSE",
+    "sha256": "27cb148bbe9322e6f8caa8c4b4d8a4998d6365ee8f5d66f320ed43984f67866a",
+    "size": 20662
+  },
+  {
+    "path": "common/scala/NOTICE",
+    "sha256": "3f5164e9c07dbace30964156a3b1455ebdf6ea335d6c5f16fb7e1fefca846ec3",
+    "size": 3176
+  },
+  {
+    "path": "common/scala/build.gradle",
+    "sha256": "6f10dec7be2908f051243e7d93e72501ba7efeb9f06be0600fb0a120baef8aff",
+    "size": 5621
+  },
+  {
+    "path": "common/scala/src/main/scala/org/apache/openwhisk/core/entity/Exec.scala",
+    "sha256": "2a4087f07242907e9ca490ca437fca67dd097e4e9c9a50f967f66f6bbfa4608c",
+    "size": 19825
+  },
+  {
+    "path": "common/scala/src/main/scala/org/apache/openwhisk/core/etcd/EtcdWorker.scala",
+    "sha256": "351b5a589a45067b17c7216eebe157fcca6755bd30175b48c9fd932a61b33e12",
+    "size": 7308
+  },
+  {
+    "path": "core/controller/Dockerfile",
+    "sha256": "1af122cd7f7fe6f1c25c16c7b469f6b386957ad2706b82eb8d93d42e8c92d529",
+    "size": 3476
+  },
+  {
+    "path": "core/controller/src/main/scala/org/apache/openwhisk/core/controller/WebActions.scala",
+    "sha256": "35d02c05d54f6002eb4f4be5e0cb229c5d31d010d67d4107c4a2c23c0341472d",
+    "size": 34583
+  },
+  {
+    "path": "core/invoker/Dockerfile",
+    "sha256": "dc14e021ef0132eeced569915773a1e80954ef91bf05830423adaf251e65d478",
+    "size": 2251
+  },
+  {
+    "path": "core/invoker/build.gradle",
+    "sha256": "f9861d68b228ff652d3a3dd2421b69bda0efb0de348ac6e576ba463af99c8669",
+    "size": 1882
+  },
+  {
+    "path": "core/scheduler/Dockerfile",
+    "sha256": "b9493d3681dfb3cbdb982a89a5e19d4b3c8b0cd20470dd7d0b20e2b20272e5d1",
+    "size": 1169
+  },
+  {
+    "path": "core/scheduler/build.gradle",
+    "sha256": "b242b0c8ebeb6806a0211dc3c8d5f44296255e19760c7776c17decd28d472d3c",
+    "size": 4217
+  },
+  {
+    "path": "core/standalone/Dockerfile",
+    "sha256": "90efe475258343da6db47ee41387c45c7b30ea161e7c539e6b9fbf0bff20fc8e",
+    "size": 1383
+  },
+  {
+    "path": "core/standalone/build.gradle",
+    "sha256": "bcc003e94ec5445fcef3ea7c1245d66c5351c6c7ba69865271a7cd8ff3ca0aff",
+    "size": 6633
+  },
+  {
+    "path": "settings.gradle",
+    "sha256": "e4ed6e08ff01c774343a93faeffc43e8ddde86e1e9360e21c99200abb4aabad8",
+    "size": 2548
+  },
+  {
+    "path": "tests/src/test/scala/org/apache/openwhisk/core/containerpool/kubernetes/test/Fabric8ClientTests.scala",
+    "sha256": "e8d7d309d71879674ac6967f8e8932709d0bf78d6a525bd39cb6d3a752e5e946",
+    "size": 4421
+  }
+]
