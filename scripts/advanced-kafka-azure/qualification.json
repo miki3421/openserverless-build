@@ -1,0 +1,239 @@
+{
+  "date": "2026-11-06",
+  "scope": "existing ADV Linux AMD64 laboratory only",
+  "baselineVmChanged": false,
+  "source": {
+    "repository": "https://github.com/miki3421/openwhisk",
+    "branch": "fix/advanced-kafka-azure-20261106",
+    "commit": "7c4de0f65fca0a5510f310313bc03e49289f7eb6",
+    "tree": "eb0dadeb4b15d1536632c5f713a79a0a00170b34",
+    "preBatchCommit": "c3154902f903b01ec4efe7e2cfe64276f223dd9b"
+  },
+  "versions": {
+    "kafkaClients": "3.9.2",
+    "azureStorageBlob": "12.19.0",
+    "reactorBom": "2024.0.8",
+    "reactorNetty": "1.2.8",
+    "reactorCore": "3.7.8",
+    "lz4": "1.11.4"
+  },
+  "images": {
+    "controller": {
+      "image": "localhost/ops-advanced-controller:20261106-kafka-azure-r3",
+      "manifest": "sha256:e926b6578abdf8ff0c3be1a1477e89ae098d4c3a84764d034562783476d90c57",
+      "config": "sha256:4f1ad422071229643f0d436f9a59b256becec8b9b858b44b0ff96fd9d34e6560",
+      "platform": "linux/amd64",
+      "base": "localhost/ops-advanced-controller:20261106-libs-r2",
+      "baseManifest": "sha256:8f0fb9a337242bf6cfcc69d7e24176efbff987beecfe44fdfdc73973fc624940",
+      "baseConfig": "sha256:50e842ea7e43bceb7cccc8e55f5e4dd18639346200eb9e54c0e6666d4cc371d6"
+    },
+    "invoker": {
+      "image": "localhost/ops-advanced-invoker:20261106-kafka-azure-r3",
+      "manifest": "sha256:0190540ea64c7187870e6298148061c245a486ea6bd64d10e81fd2311d1577d4",
+      "config": "sha256:670ed82fc9e221c4ae754d8411b021a0332ea3c6092cb767a0bf72c01e3bddef",
+      "platform": "linux/amd64",
+      "base": "localhost/ops-advanced-invoker:20261106-libs-r2",
+      "baseManifest": "sha256:cbcd7fd1a7522a704128e083af53643eaa38e5e5e4e61ac4adf1104117683789",
+      "baseConfig": "sha256:3a222bff5c636bd647de78eea3f57076814d0dcf80aed83fba1581f2ca151ad9"
+    }
+  },
+  "fixtures": {
+    "ghcr.io/nuvolaris/kafka:2.3.1.2311011621": {
+      "manifest": "sha256:566aa23ad1c28b450da878d7bf4b0ffbd55e2b1c9a6c8b15197c032382e4a508",
+      "platform": "linux/amd64"
+    },
+    "mcr.microsoft.com/azure-storage/azurite:3.37.0": {
+      "manifest": "sha256:830430c1da1a2d537e08f3e6764dd1f5ae00cf0346bcaf625b968ec3f0971fd5",
+      "platform": "linux/amd64"
+    }
+  },
+  "distributions": {
+    "controller": "2371a7d67a8f8512283747dbd777f60634651a313f34d6df677eaed981b84f8b",
+    "invoker": "17b0b8a8012fc41f6b5fdaa20fe683bc9a5009ca6dc90e6436c5e247ce45aa4b"
+  },
+  "sourceTests": [
+    {
+      "name": "org.apache.openwhisk.core.database.azblob.AzureBlobConfigTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "org.apache.openwhisk.core.controller.test.WebActionsApiTests",
+      "tests": "127",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "org.apache.openwhisk.core.containerpool.kubernetes.test.Fabric8ClientTests",
+      "tests": "2",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "org.apache.openwhisk.connector.kafka.KafkaMetricsTests",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "org.apache.openwhisk.core.database.s3.CloudFrontSignerTests",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "org.apache.openwhisk.core.containerpool.kubernetes.test.WhiskPodBuilderTests",
+      "tests": "6",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    },
+    {
+      "name": "org.apache.openwhisk.core.containerpool.kubernetes.test.KubernetesClientTests",
+      "tests": "5",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "azureAttachmentTests": [
+    {
+      "name": "org.apache.openwhisk.core.database.azblob.AzureBlobAttachmentStoreITTests",
+      "tests": "11",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0"
+    }
+  ],
+  "localChecks": {
+    "dependencyChecks": {
+      "controller": 18,
+      "invoker": 18
+    },
+    "redactionChecks": {
+      "controller": 3,
+      "invoker": 3
+    },
+    "kafkaBrokerChecks": 35,
+    "azureSharedKeyAndDenialChecks": 4,
+    "failures": 0,
+    "skips": 0,
+    "legacyRedactionWitness": "FAIL as expected; same checker fails on original request-byte exposure",
+    "sourceFormatting": "common/scala and tests checkScalafmt PASS"
+  },
+  "adv": {
+    "options-live": {
+      "PASS": 7
+    },
+    "alpha-beta-live": {
+      "PASS": 12
+    },
+    "streaming-live": {
+      "PASS": 2
+    },
+    "python-kinds-live": {
+      "PASS": 24
+    },
+    "controllerLinkageErrors": 0,
+    "invokerLinkageErrors": 0
+  },
+  "trivyVersion": "0.76.2",
+  "trivyDatabases": {
+    "db": {
+      "Version": 2,
+      "NextUpdate": "2026-11-07T09:50:00.021602794Z",
+      "UpdatedAt": "2026-11-06T09:50:00.021603275Z",
+      "DownloadedAt": "2026-11-06T11:16:23.544373149Z",
+      "sha256": "b264de27d47bbfb52ad2d563d234ea98ffafb4b45265409bcaba72ea6dbe078b"
+    },
+    "java-db": {
+      "Version": 1,
+      "NextUpdate": "2026-11-09T01:10:43.741478889Z",
+      "UpdatedAt": "2026-11-06T01:10:43.741478979Z",
+      "DownloadedAt": "2026-11-06T11:16:41.416397324Z",
+      "sha256": "7124b5d89aa910c1c79b7cbdd35903ab940762f6ebb27729e558fb197f9ae1db"
+    }
+  },
+  "candidateScan": {
+    "controller": {
+      "total": {
+        "MEDIUM": 32,
+        "LOW": 42
+      },
+      "java": [
+        {
+          "VulnerabilityID": "CVE-2025-46548",
+          "PkgName": "com.lightbend.akka.management:akka-management_2.12",
+          "InstalledVersion": "1.0.5",
+          "FixedVersion": "1.6.1",
+          "Severity": "MEDIUM"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-44487",
+          "PkgName": "com.typesafe.akka:akka-http-core",
+          "InstalledVersion": "10.2.4",
+          "FixedVersion": "10.5.3",
+          "Severity": "MEDIUM"
+        }
+      ]
+    },
+    "invoker": {
+      "total": {
+        "MEDIUM": 32,
+        "LOW": 42
+      },
+      "java": [
+        {
+          "VulnerabilityID": "CVE-2025-46548",
+          "PkgName": "com.lightbend.akka.management:akka-management_2.12",
+          "InstalledVersion": "1.0.5",
+          "FixedVersion": "1.6.1",
+          "Severity": "MEDIUM"
+        },
+        {
+          "VulnerabilityID": "CVE-2023-44487",
+          "PkgName": "com.typesafe.akka:akka-http-core",
+          "InstalledVersion": "10.2.4",
+          "FixedVersion": "10.5.3",
+          "Severity": "MEDIUM"
+        }
+      ]
+    }
+  },
+  "priorImageScanSameDatabases": {
+    "controller": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "javaMedium": 6,
+      "ubuntuMedium": 30,
+      "ubuntuLow": 42
+    },
+    "invoker": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "javaMedium": 6,
+      "ubuntuMedium": 30,
+      "ubuntuLow": 42
+    }
+  },
+  "retainedIntermediateFailures": [
+    "Azure 12.18 deprecated download method failed strict Scala compilation; replaced with streaming equivalent",
+    "Azure 12.18 pulled Reactor Netty 1.0.20: 2 new High and 2 new Medium inventory matches per image",
+    "Azure test classpath aggregate/split Reactor conflict: NoSuchMethodError on resolver; corrected by Reactor BOM",
+    "Azure 12.18 sync upload uses removed Mono.subscriberContext with Reactor 3.7; reproduced and corrected by Azure 12.19"
+  ],
+  "limitations": [
+    "Inventory remediation is not proof of a reachable prior platform exploit",
+    "No real Azure cloud/CDN or other optional external cloud-store qualification",
+    "No SASL deployment, ARM64, fresh install, production or full repository-suite qualification",
+    "Two Java Medium Akka findings and unchanged Ubuntu findings remain",
+    "Images imported locally on ADV; no registry publication claimed",
+    "Prior batch evidence remains separate and preserved"
+  ]
+}
