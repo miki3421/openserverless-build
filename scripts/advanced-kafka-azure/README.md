@@ -6,10 +6,16 @@ authentication, logging and tenant controls remain unchanged. It is qualified
 for the existing AMD64 ADV laboratory; it is not a fresh-install or ARM64 release.
 
 The source changes are mirrored at their original paths under `openwhisk-patch`.
-`source-overlay-manifest.json` verifies every overlay file against the source
+`source-overlay-manifest.json` records the overlay files for the original source
 commit in `qualification.json`. The normal pinned OpenWhisk overlay mechanism
 is preserved. The task fork selects these locally imported images only on its
 separate ADV branch; the baseline catalog is not changed.
+
+The [HttpClient and zstd-jni qualification](qualification-httpclient-zstd.json)
+records the current overlay delta, the local AMD64 images, and the invocation
+results. For that test, the lab operator accepted both image fields in the Whisk
+resource. Each StatefulSet needed a separate image-only update to roll out the
+new digests.
 
 ## Minimum compatible dependency set
 

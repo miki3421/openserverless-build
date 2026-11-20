@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-20",
+  "scope": "ADV candidate on an isolated Linux AMD64 acceptance VM",
+  "sourceCommit": "0ebd72f704528f1bd2616510bdf650a4aa186e0a",
+  "previousSourceCommit": "7c4de0f65fca0a5510f310313bc03e49289f7eb6",
+  "overlayDelta": {
+    "path": "common/scala/build.gradle",
+    "previousManifestSha256": "3d6c0e96a4b4043637e76fd8bdf27cba2e33ced92928d5fca48f25dc5e93c2f8",
+    "sha256": "5691206bf9215a918333a333b11d61a1803e1111e3fee4e17acea87ccc8fa93e",
+    "size": 5781
+  },
+  "versions": {
+    "httpclient": "4.5.14",
+    "httpcore": "4.4.16",
+    "zstd-jni": "1.5.7-24",
+    "kafka-clients": "3.9.2",
+    "guava": "33.8.0-jre",
+    "snappy-java": "1.1.10.12"
+  },
+  "images": {
+    "controller": {
+      "baseManifest": "sha256:e926b6578abdf8ff0c3be1a1477e89ae098d4c3a84764d034562783476d90c57",
+      "manifest": "sha256:bb67061632daf5505a3cd9db6cd53909fba9cfa87870f5bb58fe6f33f2d4f1cf",
+      "distributionSha256": "34c57854668f1b6be99b63281ecabbbe91e46a26c59f97a48242102227c38231",
+      "kafkaChecksPassed": 36,
+      "runningInAcceptanceLab": true,
+      "acceptanceRestarts": 0
+    },
+    "invoker": {
+      "baseManifest": "sha256:0190540ea64c7187870e6298148061c245a486ea6bd64d10e81fd2311d1577d4",
+      "manifest": "sha256:aa73a8f5fbf9f0349af96dcc0e74392b746556b97f1e80c1b1262ece1ef8059c",
+      "distributionSha256": "b5fbc8c635263ce3074f7c19aec560a204947724a96d307b09b629c76079f656",
+      "kafkaChecksPassed": 36,
+      "runningInAcceptanceLab": true,
+      "acceptanceRestarts": 0
+    }
+  },
+  "sourceTests": [
+    {
+      "name": "org.apache.openwhisk.connector.kafka.KafkaMetricsTests",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.apache.openwhisk.core.containerpool.kubernetes.test.Fabric8ClientTests",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.apache.openwhisk.core.containerpool.kubernetes.test.KubernetesClientTests",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.apache.openwhisk.core.containerpool.kubernetes.test.WhiskPodBuilderTests",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.apache.openwhisk.core.controller.test.WebActionsApiTests",
+      "tests": 127,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.apache.openwhisk.core.database.azblob.AzureBlobConfigTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "org.apache.openwhisk.core.database.s3.CloudFrontSignerTests",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "scalaFormatting": "pass",
+  "kafkaFixture": {
+    "version": "4.4.0",
+    "manifest": "sha256:4cca13390dc2e488b2e44e2f56da9fa32e01a37430cb15eea734f5db3e34d5dd",
+    "codecs": [
+      "none",
+      "gzip",
+      "snappy",
+      "lz4",
+      "zstd"
+    ]
+  },
+  "acceptance": {
+    "baselineInvocation": "pass",
+    "synchronousInvocation": "pass",
+    "asynchronousActivationResult": "pass",
+    "persistentVolumeClaimsRetained": 19,
+    "brokerStatefulSetAndImageRetained": true,
+    "rollout": "Whisk image fields updated; current operator did not redeploy on image-only changes. The lab used a checked image-only patch on each StatefulSet.",
+    "imagePublication": "local import only",
+    "atlasEnginesUpdated": false
+  }
+}
