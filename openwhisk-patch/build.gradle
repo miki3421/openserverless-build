@@ -36,6 +36,13 @@ subprojects {
     version '1.0.0-SNAPSHOT'
 
     pluginManager.withPlugin('scala') {
+        // Gradle 6.9 does not select Guava's standard JVM variant by default.
+        configurations.configureEach {
+            if (canBeResolved) {
+                attributes.attribute(Attribute.of('org.gradle.jvm.environment', String), 'standard-jvm')
+            }
+        }
+
         // Constraint all transitive akka-* dependencies to the one we want to use to avoid issues.
         // List generated via
         // ./gradlew :test:dependencies | grep -o 'akka-.*_' | cut -c 6- | rev | cut -c 2- | rev | sort -u

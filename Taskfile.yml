@@ -76,7 +76,7 @@ vars:
   GRADLE_WRAPPER_JAR: openwhisk/gradle/wrapper/gradle-wrapper.jar
   GRADLE_WRAPPER_URL: https://raw.githubusercontent.com/gradle/gradle/v6.9.1/gradle/wrapper/gradle-wrapper.jar
   GRADLE_WRAPPER_SHA256: e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637
-  OPENWHISK_HASH: "cfe0da66f52754212aa5d7c19bd03e924bdbfcd8"
+  OPENWHISK_HASH: "9214016b8e7ea859fe9d196165491f2192f81588"
 
 tasks:
 
