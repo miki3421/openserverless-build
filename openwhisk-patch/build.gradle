@@ -38,7 +38,7 @@ subprojects {
     pluginManager.withPlugin('scala') {
         // Gradle 6.9 does not select Guava's standard JVM variant by default.
         configurations.configureEach {
-            if (canBeResolved) {
+            if (canBeResolved && !canBeConsumed) {
                 attributes.attribute(Attribute.of('org.gradle.jvm.environment', String), 'standard-jvm')
             }
         }
